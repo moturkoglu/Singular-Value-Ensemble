@@ -35,7 +35,7 @@ SVE provides:
 ## Method
 
 <p align="center">
-  <img src="assets/sve_method.png" width="95%" alt="Singular Value Ensemble method">
+  <img src="assets/sve_method.jpg" width="95%" alt="Singular Value Ensemble method">
 </p>
 
 <p align="center">
