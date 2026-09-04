@@ -26,7 +26,7 @@ This provides ensemble-style uncertainty estimation with **less than 1% addition
 ## Method
 
 <p align="center">
-  <img src="sve_method.jpg" width="95%" alt="Singular Value Ensemble method">
+  <img src="assets/sve_method.jpg" width="95%" alt="Singular Value Ensemble method">
 </p>
 
 For a pretrained weight matrix:
