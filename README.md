@@ -9,7 +9,7 @@ Official repository for **"Quantifying the Uncertainty of Foundation Models with
 
 📄 [Paper](https://arxiv.org/abs/2601.22068)
 
-> **Code release:** implementation and reproducibility scripts will be added to this repository.
+> **Code release:** The implementation will be added to this repository.
 
 ---
 
