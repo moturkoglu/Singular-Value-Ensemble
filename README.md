@@ -9,8 +9,6 @@ Official repository for **"Quantifying the Uncertainty of Foundation Models with
 
 📄 [Paper](https://arxiv.org/abs/2601.22068)
 
-> **Code release:** The implementation will be added to this repository.
-
 ---
 
 ## TL;DR
@@ -60,6 +58,53 @@ A conventional deep ensemble stores a complete model for every member.
 SVE instead shares almost the entire pretrained model and only introduces a small number of member-specific parameters.
 
 This makes uncertainty estimation practical for large pretrained models, including foundation models with billions of parameters.
+
+---
+
+## Getting Started
+
+This repository contains a minimal implementation of SVE for image classification with a pretrained DINO ViT.
+
+### Installation
+
+```bash
+git clone https://github.com/moturkoglu/Singular-Value-Ensemble.git
+cd Singular-Value-Ensemble
+pip install -r requirements.txt
+```
+
+### Training
+
+```bash
+python train.py
+```
+
+This trains a 4-member SVE on Oxford Flowers-102 with `vit_small_patch16_224.dino`. The dataset is downloaded to `./data` automatically.
+
+Other datasets:
+
+```bash
+python train.py --dataset {flowers102,dtd,aircraft,pets,food101,cifar100}
+```
+
+The checkpoint with the best validation accuracy is evaluated on the test set. Accuracy, NLL, Brier score and ECE are reported before and after temperature scaling (temperature fit on the validation set).
+
+### Default settings
+
+| Argument | Default |
+|---|---|
+| `--backbone` | `vit_small_patch16_224.dino` |
+| `--n_members` | 4 |
+| `--epochs` / `--warmup_epochs` | 10 / 5 |
+| `--lr` | 1e-3 (AdamW, cosine schedule) |
+| `--weight_decay` | 0.05 |
+| `--batch_size` | 16 |
+| `--init_std` | 0.01 |
+
+### Files
+
+- `sve.py`: SVE layer, member-specific heads and model
+- `train.py`: data, training and evaluation
 
 ---
 
